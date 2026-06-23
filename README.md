@@ -29,8 +29,8 @@ As a data analyst partnering with the marketing and product strategy teams, I wa
 - **SQL**: Exploratory queries for initial data profiling and segmentation analysis
 - **Python**: Pandas, Matplotlib, and Seaborn for Data Cleaning, EDA, and statistical analysis
 
-**AI-Assisted Bonus Section:**
-- **Machine Learning**: Scikit-learn (Random Forest Classifier) for an introductory exploration of predictive lead scoring
+**Bonus Exploration:**
+- **Machine Learning**: Scikit-learn (Random Forest Classifier) for an introductory exploration of predictive lead scoring. Note: As my core focus is Data Analytics, I utilized an AI coding assistant (LLM) to help write the Python ML implementation.
 
 ---
 
@@ -135,9 +135,11 @@ Not all policy categories perform equally:
 
 ---
 
-## Predictive Modeling (AI-Assisted Exploration)
+## Predictive Modeling (Bonus Exploration)
 
-While my primary focus as a Data Analyst was to uncover actionable business insights through EDA and statistical analysis, I wanted to explore the predictive power of this dataset. Using AI assistance, a **Random Forest Classifier** was built to predict lead conversion probability. The model was trained on 80% of the data (40,705 records) and evaluated on a held-out 20% test set (10,177 records).
+While my primary focus as a Data Analyst was to uncover actionable business insights through EDA and statistical analysis, I wanted to explore the predictive power of this dataset. Since my core expertise is in Analytics rather than Machine Learning, I utilized an AI coding assistant to help write the `scikit-learn` Python code for this section.
+
+A **Random Forest Classifier** was built to predict lead conversion probability. The model was trained on 80% of the data (40,705 records) and evaluated on a held-out 20% test set (10,177 records).
 
 ### Model Performance
 
