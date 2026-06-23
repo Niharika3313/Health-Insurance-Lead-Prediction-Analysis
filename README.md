@@ -24,11 +24,13 @@ A leading health insurance provider generates thousands of customer leads throug
 
 As a data analyst partnering with the marketing and product strategy teams, I was tasked with analyzing 50,000+ customer records to identify the demographic, behavioral, and policy-related factors that most strongly predict a customer's likelihood to respond positively to a health insurance offer. The ultimate goal is to **optimize marketing spend, improve lead scoring, and increase conversion rates** through data-driven targeting.
 
-**Key datasets and tools used:**
+**Core Data Analytics Stack:**
 - **Dataset**: 50,882 customer records with 14 features including demographics, policy details, and response status
 - **SQL**: Exploratory queries for initial data profiling and segmentation analysis
-- **Python**: Pandas, Scikit-learn, Matplotlib, and Seaborn for EDA, statistical analysis, and machine learning
-- **Machine Learning**: Random Forest Classifier for lead conversion prediction
+- **Python**: Pandas, Matplotlib, and Seaborn for Data Cleaning, EDA, and statistical analysis
+
+**AI-Assisted Bonus Section:**
+- **Machine Learning**: Scikit-learn (Random Forest Classifier) for an introductory exploration of predictive lead scoring
 
 ---
 
@@ -133,9 +135,9 @@ Not all policy categories perform equally:
 
 ---
 
-## Predictive Modeling
+## Predictive Modeling (AI-Assisted Exploration)
 
-To move beyond descriptive analytics, a **Random Forest Classifier** was built to predict lead conversion probability. The model was trained on 80% of the data (40,705 records) and evaluated on a held-out 20% test set (10,177 records).
+While my primary focus as a Data Analyst was to uncover actionable business insights through EDA and statistical analysis, I wanted to explore the predictive power of this dataset. Using AI assistance, a **Random Forest Classifier** was built to predict lead conversion probability. The model was trained on 80% of the data (40,705 records) and evaluated on a held-out 20% test set (10,177 records).
 
 ### Model Performance
 
