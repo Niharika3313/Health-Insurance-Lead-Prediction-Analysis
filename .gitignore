@@ -16,7 +16,3 @@ env/
 # Ignore reference repository
 /reference_repo/
 
-# Ignore setup and generation scripts
-create_notebooks.py
-generate_charts.py
-generate_ml_charts.py
