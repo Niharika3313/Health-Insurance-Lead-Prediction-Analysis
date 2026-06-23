@@ -1,0 +1,20 @@
+# Ignore raw and processed data to avoid committing large datasets
+/data/raw/
+/data/processed/
+
+# Ignore python cache and environment files
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+env/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore reference repository
+/reference_repo/
+
+# Ignore setup script
+create_notebooks.py
