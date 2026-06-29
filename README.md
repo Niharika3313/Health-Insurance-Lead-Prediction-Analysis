@@ -2,156 +2,239 @@
 
 ## Table of Contents
 
-* [Project Overview](#project-overview)
-* [Objectives](#objectives)
-* [Tools & Technologies](#tools--technologies)
-* [Dataset](#dataset)
-* [Executive Summary](#executive-summary)
-* [Key Insights](#key-insights)
+-   [Project Overview](#project-overview)
+-   [Executive Summary](#executive-summary)
+-   [Key Insights](#key-insights)
+    -   [Lead Conversion](#lead-conversion)
+    -   [Customer Demographics](#customer-demographics)
+    -   [Accommodation & Premium
+        Analysis](#accommodation--premium-analysis)
+    -   [Customer Profile Segmentation](#customer-profile-segmentation)
+    -   [Regional Analysis](#regional-analysis)
+    -   [Feature Correlations](#feature-correlations)
+    -   [Policy Category Performance](#policy-category-performance)
+-   [Predictive Modeling](#predictive-modeling)
+    -   [Model Performance](#model-performance)
+    -   [Feature Importance](#feature-importance)
+-   [Business Recommendations](#business-recommendations)
+-   [Limitations](#limitations)
+-   [Repository Structure](#repository-structure)
 
-  * [Lead Conversion](#lead-conversion)
-  * [Customer Demographics](#customer-demographics)
-  * [Policy Category](#policy-category)
-  * [Regional Analysis](#regional-analysis)
-  * [Premium Analysis](#premium-analysis)
-* [Predictive Modeling](#predictive-modeling)
-* [Business Recommendations](#business-recommendations)
-* [Limitations](#limitations)
-* [Conclusion](#conclusion)
+------------------------------------------------------------------------
 
----
+# Project Overview
 
-## Project Background
+This portfolio project analyzes a health insurance lead dataset
+containing **50,882 customer records** to identify the demographic,
+behavioural, and policy-related factors that influence whether a
+customer purchases a health insurance policy.
 
-This portfolio project analyzes a health insurance lead dataset containing **50,882 customer records** to understand the factors that influence whether a customer purchases a health insurance policy.
+Using **SQL, Python, and Power BI**, I performed data cleaning,
+exploratory data analysis (EDA), statistical analysis, and dashboard
+development to uncover meaningful business insights. The objective was
+to answer questions such as:
 
-The objective was to identify demographic, behavioral, and policy-related patterns that affect lead conversion and provide actionable business recommendations. The project demonstrates the complete data analysis workflow—from data cleaning and exploratory analysis to interactive dashboards and a basic machine learning model for predictive analysis.
+-   Which customers are most likely to purchase a policy?
+-   Which policy categories perform best?
+-   How do demographic and regional factors influence conversion?
+-   What recommendations can improve marketing effectiveness?
 
-## Objectives
+### Tools & Technologies
 
-* Clean and prepare the dataset for analysis.
-* Explore customer demographics and policy-related information.
-* Identify factors influencing lead conversion.
-* Create meaningful visualizations and dashboards.
-* Generate business recommendations based on the findings.
-* Explore whether a machine learning model can predict customer conversion.
-
----
-
-## Tools & Technologies
-
-* **SQL** – Data exploration and business queries
-* **Python** – Data cleaning, EDA, visualization, and modeling
-* **Power BI** – Interactive dashboard development
-* **Excel** – Initial data inspection
+-   **SQL** -- Data exploration and business queries
+-   **Python** -- Data cleaning, EDA, visualization, and predictive
+    modelling
+-   **Power BI** -- Interactive dashboard development
+-   **Excel** -- Initial data inspection
 
 **Python Libraries**
 
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
+-   Pandas
+-   NumPy
+-   Matplotlib
+-   Seaborn
+-   Scikit-learn
 
----
-
-## Dataset
-
-* **Records:** 50,882
-* **Features:** 14
-* **Target Variable:** Response (Interested / Not Interested)
-
-The dataset contains customer demographic information, policy details, premium information, and previous insurance history.
-
----
+------------------------------------------------------------------------
 
 # Executive Summary
 
-The analysis shows an overall conversion rate of **24%**, indicating that approximately one out of every four leads purchases a policy.
+The analysis of **50,882 customer records** revealed an overall lead
+conversion rate of **24%**, with **12,209 interested customers** and
+**38,673 non-interested customers**.
 
-Some of the key findings include:
+Key findings include:
 
-* Customers aged **36–45** have the highest conversion rate.
-* **Recommended Policy Category** is the strongest factor associated with conversion.
-* Premium amount alone does not significantly influence customer decisions.
-* Conversion rates vary noticeably across different cities and regions.
-* Accommodation type has only a small impact on customer conversion.
+-   Customers aged **36--45** have the highest conversion rate.
+-   **Recommended Policy Category** is the strongest predictor of
+    customer conversion.
+-   Premium amount alone has little influence on customer decisions.
+-   Customer response varies across different cities and regions.
+-   Accommodation type has only a minimal impact on conversion.
 
-These findings can help businesses improve lead targeting and marketing strategies.
+![Lead Conversion Funnel](visualizations/lead_conversion_rate.png)
 
----
+------------------------------------------------------------------------
 
 # Key Insights
 
 ## Lead Conversion
 
-* Total Customers: **50,882**
-* Interested Customers: **12,209 (24%)**
-* Not Interested: **38,673 (76%)**
+Approximately **1 in every 4 customers** purchased a health insurance
+policy.
 
-The business opportunity lies in improving conversion by focusing marketing efforts on customers with a higher likelihood of purchasing.
+  Metric                 Value
+  ---------------------- ----------------
+  Total Records          50,882
+  Interested Customers   12,209 (24.0%)
+  Not Interested         38,673 (76.0%)
 
----
+------------------------------------------------------------------------
 
 ## Customer Demographics
 
-Analysis shows that conversion does not increase steadily with age.
+Customers between **36 and 45 years** recorded the highest conversion
+rate, while the **18--25** age group had the lowest.
 
-Instead, customers between **36 and 45 years** have the highest conversion rate, while the **18–25** age group has the lowest.
+![Age Distribution](visualizations/age_distribution.png)
 
----
+------------------------------------------------------------------------
 
-## Policy Category
+## Accommodation & Premium Analysis
 
-The recommended policy category has the strongest relationship with customer conversion.
+Accommodation type showed very little impact on conversion.
 
-This suggests that recommending the right policy is likely more important than focusing only on demographic characteristics.
+-   Owned: **24.1%**
+-   Rented: **23.8%**
 
----
+Similarly, premium recommendations for interested and non-interested
+customers were nearly identical, suggesting that premium amount alone is
+not the primary driver of conversion.
+
+![Conversion by
+Accommodation](visualizations/conversion_by_accommodation.png)
+
+![Premium Distribution](visualizations/premium_vs_conversion.png)
+
+------------------------------------------------------------------------
+
+## Customer Profile Segmentation
+
+Insurance type and spouse status showed noticeable differences in
+customer behaviour, indicating that household profile may influence
+purchasing decisions.
+
+![Conversion by Profile](visualizations/conversion_by_profile.png)
+
+------------------------------------------------------------------------
 
 ## Regional Analysis
 
-Customer response varies across cities.
+Conversion rates varied across cities. Some cities consistently
+outperformed others, suggesting that location-specific marketing
+strategies may improve overall conversion.
 
-Some cities consistently perform better than others, indicating that regional marketing strategies could improve campaign effectiveness.
+![Top Cities](visualizations/top_cities.png)
 
----
+------------------------------------------------------------------------
 
-## Premium Analysis
+## Feature Correlations
 
-Customers who converted and those who did not received similar premium recommendations.
+Correlation analysis showed:
 
-This suggests that premium amount alone is not the primary reason customers decide to purchase a policy.
+-   Upper_Age and Lower_Age are highly correlated.
+-   Premium increases with customer age.
+-   Individual features have weak linear relationships with conversion,
+    suggesting that customer behaviour is influenced by multiple
+    interacting factors.
 
----
+![Correlation Heatmap](visualizations/correlation_heatmap.png)
+
+------------------------------------------------------------------------
+
+## Policy Category Performance
+
+Recommended Policy Category emerged as one of the strongest business
+variables associated with customer conversion.
+
+![Policy Category
+Performance](visualizations/policy_category_performance.png)
+
+------------------------------------------------------------------------
 
 # Predictive Modeling
 
-As an additional learning exercise, I built a **Random Forest Classifier** to predict customer conversion.
+As an additional learning exercise, I built a **Random Forest
+Classifier** to explore whether customer conversion could be predicted.
 
-Since my primary focus is Data Analytics rather than Machine Learning, I used an AI coding assistant to help implement the machine learning code while ensuring I understood the workflow, evaluation metrics, and interpretation of the results.
+Since my primary focus is **Data Analytics** rather than Machine
+Learning, I used an AI coding assistant to help implement parts of the
+model while ensuring I understood the preprocessing steps, evaluation
+metrics, and interpretation of the results.
 
-The model achieved a **ROC-AUC score of approximately 0.62**, showing moderate predictive capability.
+## Model Performance
 
-Feature importance analysis identified **Recommended Policy Category** as the strongest predictor of customer conversion.
+  Metric      Not Interested   Interested
+  ----------- ---------------- ------------
+  Precision   0.81             0.30
+  Recall      0.58             0.56
+  F1 Score    0.68             0.39
+  ROC-AUC     **0.6222**       
 
----
+![Confusion Matrix](visualizations/confusion_matrix.png)
+
+## Feature Importance
+
+The Random Forest model identified the following as the strongest
+predictors:
+
+1.  Reco_Policy_Cat
+2.  Region_Code
+3.  Reco_Policy_Premium
+4.  City_Code
+5.  Upper_Age
+
+![Feature Importance](visualizations/feature_importance.png)
+
+------------------------------------------------------------------------
 
 # Business Recommendations
 
-Based on the analysis, the following recommendations were identified:
+-   Improve policy recommendations based on customer profiles.
+-   Focus marketing campaigns on customer segments with higher
+    conversion rates.
+-   Study high-performing cities and replicate successful strategies in
+    lower-performing regions.
+-   Continue exploring interaction features and additional models to
+    improve predictive performance.
 
-* Improve policy recommendations based on customer profiles.
-* Focus marketing efforts on the 26–45 age group.
-* Analyze successful cities and replicate their strategies in lower-performing regions.
-* Develop more personalized customer targeting instead of relying on demographic variables alone.
-* Explore additional feature engineering and techniques to improve predictive model performance.
+------------------------------------------------------------------------
 
----
+# Limitations
 
-# Conclusion
+-   Missing values were imputed before analysis.
+-   The dataset contains class imbalance (76:24).
+-   The dataset does not include timestamps, preventing time-series or
+    cohort analysis.
+-   The machine learning model was created as an exploratory exercise
+    rather than a production model.
 
-This project demonstrates an end-to-end data analytics workflow involving data cleaning, exploratory data analysis, SQL querying, dashboard creation, business insight generation, and introductory predictive modeling.
+------------------------------------------------------------------------
 
-The focus of the project is not only to build visualizations but also to translate data into practical business recommendations that can support decision-making.
-tive_modeling.ipynb).
+# Repository Structure
+
+``` text
+├── data/
+├── notebooks/
+├── sql/
+├── dashboard/
+├── visualizations/
+└── README.md
+```
+
+### Project Files
+
+-   **SQL:** Exploratory business queries.
+-   **EDA Notebook:** Data cleaning, exploration, and visualizations.
+-   **Modeling Notebook:** Random Forest implementation and evaluation.
+-   **Power BI Dashboard:** Interactive business dashboard.
